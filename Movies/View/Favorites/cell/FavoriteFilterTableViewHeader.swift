@@ -27,7 +27,7 @@ class FavoriteFilterTableViewHeader: BaseTableViewHeaderFooterView, CellHeight {
         btn.setTitle("Add filter", for: .normal)
         btn.addTarget(self, action: #selector(onFilterButtonPressed), for: .touchUpInside)
         btn.contentEdgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
-        btn.tintColor = Config.blue
+        btn.tintColor = Config.purple
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return btn
     }()

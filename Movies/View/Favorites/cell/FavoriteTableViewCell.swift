@@ -35,7 +35,7 @@ class FavoriteTableViewCell: BaseTableViewCell, CellHeight {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.backgroundColor = Config.blue.withAlphaComponent(0.2)
+        iv.backgroundColor = Config.purple.withAlphaComponent(0.2)
         return iv
     }()
     

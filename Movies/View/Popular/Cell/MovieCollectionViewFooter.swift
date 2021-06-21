@@ -36,7 +36,7 @@ class MovieCollectionViewFooter: UICollectionReusableView, CellHeight {
         let btn = UIButton(type: .system)
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Try again", for: .normal)
-        btn.backgroundColor = Config.blue
+        btn.backgroundColor = Config.purple
         btn.tintColor = Config.black
         btn.layer.cornerRadius = 2.0
         btn.layer.borderWidth = 2.0

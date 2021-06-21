@@ -13,18 +13,19 @@ class MovieDetailViewController: BaseViewController {
     private let movie: Movie
     
     private let scrollView = UIScrollView()
+    
     private let containerView: UIView = {
-        let v = UIView()
-        v.backgroundColor = .white
-        return v
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
     }()
     
     private let imgView: UIImageView = {
-        let iv = UIImageView()
-        iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
-        iv.backgroundColor = Config.blue.withAlphaComponent(0.2)
-        return iv
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = Config.purple.withAlphaComponent(0.2)
+        return imageView
     }()
     
     private let genresLabel: UILabel = {
@@ -64,7 +65,7 @@ class MovieDetailViewController: BaseViewController {
         btn.addTarget(self, action: #selector(toggleFavorite), for: .touchUpInside)
         btn.contentEdgeInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
         btn.setTitleColor(Config.black, for: .normal)
-        btn.backgroundColor = Config.blue
+        btn.backgroundColor = Config.purple
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return btn
     }()
@@ -120,7 +121,7 @@ class MovieDetailViewController: BaseViewController {
                 favoriteBtn.setTitle("Remove from favorites", for: .normal)
             } else {
                 favoriteBtn.setTitleColor(Config.black, for: .normal)
-                favoriteBtn.backgroundColor = Config.blue
+                favoriteBtn.backgroundColor = Config.purple
                 favoriteBtn.setTitle("Add to favorites", for: .normal)
             }
         }
@@ -182,7 +183,7 @@ extension MovieDetailViewController {
             favoriteBtn.setTitle("Remove from favorites", for: .normal)
         } else {
             favoriteBtn.setTitleColor(Config.black, for: .normal)
-            favoriteBtn.backgroundColor = Config.blue
+            favoriteBtn.backgroundColor = Config.purple
             favoriteBtn.setTitle("Add to favorites", for: .normal)
         }
     }

@@ -37,13 +37,13 @@ class MovieCollectionViewCell: BaseCollectionViewCell, CellHeight {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.backgroundColor = Config.blue.withAlphaComponent(0.2)
+        iv.backgroundColor = Config.purple.withAlphaComponent(0.2)
         return iv
     }()
     
     private let textPlaceholderView: UIView = {
         let v = UIView()
-        v.backgroundColor = Config.blue
+        v.backgroundColor = Config.purple
         return v
     }()
     

@@ -28,12 +28,12 @@ class PopularViewController: BaseViewController {
     private var filteredMovies: [Movie] = []
     
     private lazy var searchController: UISearchController = {
-        let sc = UISearchController(searchResultsController: nil)
-        sc.searchResultsUpdater = self
-        sc.dimsBackgroundDuringPresentation = false
-        sc.hidesNavigationBarDuringPresentation = true
-        sc.delegate = self
-        return sc
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.delegate = self
+        return searchController
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -42,32 +42,32 @@ class PopularViewController: BaseViewController {
         flowLayout.minimumLineSpacing = 16
         flowLayout.minimumInteritemSpacing = 0
         
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cv.backgroundColor = .clear
-        cv.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        cv.dataSource = self
-        cv.delegate = self
-        cv.register(MovieCollectionViewCell.self,
+        let uiCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        uiCollectionView.backgroundColor = .clear
+        uiCollectionView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        uiCollectionView.dataSource = self
+        uiCollectionView.delegate = self
+        uiCollectionView.register(MovieCollectionViewCell.self,
                     forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
-        cv.register(MovieCollectionViewFooter.self,
+        uiCollectionView.register(MovieCollectionViewFooter.self,
                     forSupplementaryViewOfKind: UICollectionElementKindSectionFooter,
                     withReuseIdentifier: MovieCollectionViewFooter.identifier)
-        return cv
+        return uiCollectionView
     }()
     
     // Empty view layout
     private let emptyView: UIStackView = {
-        let sv = UIStackView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.axis = .vertical
-        sv.distribution = .fill
-        sv.alignment = .center
-        return sv
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        return stackView
     }()
     private let emptyImgView: UIImageView = {
-        let iv = UIImageView(image: #imageLiteral(resourceName: "search_icon").withRenderingMode(.alwaysTemplate))
-        iv.contentMode = .scaleAspectFit
-        return iv
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "search_icon").withRenderingMode(.alwaysTemplate))
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     private let emptyLabel: UILabel = {
         let label = UILabel()
@@ -84,29 +84,29 @@ class PopularViewController: BaseViewController {
     private let errorLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "An error occurred ):"
+        label.text = "An error occurred!"
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
     }()
     private lazy var errorBtn: UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Try again", for: .normal)
-        btn.addTarget(self, action: #selector(tryAgain), for: .touchUpInside)
-        btn.backgroundColor = Config.blue
-        btn.tintColor = Config.black
-        btn.layer.cornerRadius = 2.0
-        btn.layer.borderWidth = 2.0
-        btn.layer.borderColor = Config.black.cgColor
-        return btn
+        let button = UIButton(type: .system)
+        button.setTitle("Try again", for: .normal)
+        button.addTarget(self, action: #selector(tryAgain), for: .touchUpInside)
+        button.backgroundColor = Config.purple
+        button.tintColor = Config.black
+        button.layer.cornerRadius = 2.0
+        button.layer.borderWidth = 2.0
+        button.layer.borderColor = Config.black.cgColor
+        return button
     }()
     
     private let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.hidesWhenStopped = true
-        return ai
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
     
     init(movieApi: MovieService) {

@@ -29,29 +29,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             statusBar.backgroundColor = UIColor.init(red: 237.0/255.0, green: 85.0/255.0, blue: 61.0/255.0, alpha: 1.0)
             UIApplication.shared.keyWindow?.addSubview(statusBar)
         } else {
-            UIApplication.shared.statusBarView?.backgroundColor = Config.blue
+            UIApplication.shared.statusBarView?.backgroundColor = Config.purple
         }
         
     }
     
     func setupAppearance() {
         let navigationBarAppearance = UINavigationBar.appearance()
-        navigationBarAppearance.barTintColor = Config.blue
+        navigationBarAppearance.barTintColor = Config.purple
         navigationBarAppearance.tintColor = Config.black
         navigationBarAppearance.isTranslucent = true
         navigationBarAppearance.shadowImage = UIImage()
-        navigationBarAppearance.backgroundColor = Config.blue
+        navigationBarAppearance.backgroundColor = Config.purple
         navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor : Config.black]
         navigationBarAppearance.setBackgroundImage(UIImage(), for: .default)
         
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.barTintColor = Config.blue
+        tabBarAppearance.barTintColor = Config.purple
         tabBarAppearance.tintColor = Config.black
         tabBarAppearance.isTranslucent = true
         tabBarAppearance.shadowImage = UIImage()
-        tabBarAppearance.backgroundColor = Config.blue
+        tabBarAppearance.backgroundColor = Config.purple
         
-        UISearchBar.appearance().backgroundColor = Config.blue
+        UISearchBar.appearance().backgroundColor = Config.purple
     }
     
     func setupWindow() {
