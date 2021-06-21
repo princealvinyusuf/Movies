@@ -24,7 +24,6 @@ Simple iOS Native App that provide information about popular movies using TheMov
 In this case I want to use a simple storage strategy where only the data that the user likes will go into storage and the data type like images(.jpg/.png) will easier to store with lightweight and flexible solution while using Cache.
 
 # Screenshot
-![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/main.png?raw=true)
-![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/detail.png?raw=true)
-![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/section.png?raw=true)
-![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/another_detail.png?raw=true)
+![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/images1.png?raw=true)
+![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/images2.png?raw=true)
+![alt text](https://github.com/princealvinyusuf/Movies/blob/main/images/images3.png?raw=true)
